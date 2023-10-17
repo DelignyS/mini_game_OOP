@@ -37,8 +37,20 @@ class HumanPlayer < Player
     new_weapon_level = rand(1..6)
     puts "T'as trouvé un gun de niveau #{new_weapon_level}"
     puts new_weapon_level > @weapon_level ? "C'est meilleur quincaillerie que ton flingue mon copain, ramasse!" : "Mon cousin, c'est caca, tu vas pas mettre des grosses calottes avec ça!"
-    
-  end
+   end
+   def search_health
+    health = rand(1..6)
+    case health
+    when 1
+      "Pas bon mon copain, t'as rien"
+    when 2..5
+      @life_points = (@life_points + 50) > 100 ? @life_points = 100 : @life_points + 50
+      "Bravo, sur la tête de mon fils, la chaire de ma chaire t'as trouvé de la gnôle de qualitay mon couz!"
+    when 6 
+      @life_points = (@life_points + 80) > 100 ? @life_points = 100 : @life_points +80
+      "Meilleur que les pépitos chouravés du Leclerc, +80pv mon copain"
+    end
+   end
 end
                                                                                 
                                                                       

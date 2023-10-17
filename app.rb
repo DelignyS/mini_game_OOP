@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib/game'
+
 require_relative 'lib/player'
 
 puts "À ma droite 'Josiane'"
@@ -24,4 +24,4 @@ while player1.life_points > 0 && player2.life_points > 0
   player2.show_state
 end
 
-binding.pry
+#binding.pry

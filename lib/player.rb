@@ -20,6 +20,25 @@ class Player
     others.gets_damage(damages)
     puts "et il lui inflige #{damages} points de dommages"
   end
-end                                                                             
+end
+class HumanPlayer < Player
+  attr_accessor :weapon_lvl
+  def initialize(name, life_points = 100, weapon_level = 1)
+    @weapon_level = weapon_level
+    super(name, life_points)
+  end
+  def show_state
+    puts "Mon copain #{@name} a #{life_points} PV, et un canon scié de niv #{@weapon_level}"
+  end
+  def compute_damage
+    super * @weapon_level
+  end
+  def search_weapon
+    new_weapon_level = rand(1..6)
+    puts "T'as trouvé un gun de niveau #{new_weapon_level}"
+    puts new_weapon_level > @weapon_level ? "C'est meilleur quincaillerie que ton flingue mon copain, ramasse!" : "Mon cousin, c'est caca, tu vas pas mettre des grosses calottes avec ça!"
+    
+  end
+end
                                                                                 
                                                                       
